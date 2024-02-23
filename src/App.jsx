@@ -9,7 +9,6 @@ function App() {
 
   // add todo item in list
   const addTodo = (todo) => {
-    console.log("added", todo);
     setTodos((prev) => [{ id: Date.now(), ...todo }, ...prev]);
   };
 
@@ -45,8 +44,6 @@ function App() {
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
-
-  console.log(todos);
 
   return (
     <TodoContext.Provider
